@@ -1,0 +1,47 @@
+# Maven build directory
+/target/
+
+# Logs
+*.log
+
+# IDEs
+# IntelliJ
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment and config files
+.env
+*.properties.local
+
+# Dependency directories (in case of local libs)
+lib/
+*.jar
+
+# Test reports
+/test-output/
+/surefire-reports/
+/failsafe-reports/
+
+# Coverage reports
+/coverage/
+/jacoco.exec
+
+# Miscellaneous
+*.swp
+*.swo
+*.bak
