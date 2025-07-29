@@ -24,4 +24,11 @@ public class Routes {
 	public static String put_client_url = baseUrl+"/clients/{id}";
 	public static String delete_client_url = baseUrl+"/clients/{id}";
 	
+	//Suppliers
+	public static String get_suppliers_url = baseUrl+"/suppliers/";//yet to implement
+	public static String post_supplier_url = baseUrl + "/suppliers/";
+	public static String put_supplier_url = baseUrl + "/suppliers/{id}";
+	public static String get_supplier_by_id = baseUrl + "/suppliers/{id}";
+	public static String delete_supplier_by_id = baseUrl + "/suppliers/{id}";
+	
 }

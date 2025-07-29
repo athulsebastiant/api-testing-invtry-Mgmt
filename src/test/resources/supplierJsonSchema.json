@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome1",
+    "definitions": {
+        "Welcome1": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "__v": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "__v",
+                "_id",
+                "address",
+                "createdAt",
+                "email",
+                "name",
+                "phone",
+                "updatedAt"
+            ],
+            "title": "Welcome1"
+        }
+    }
+}
