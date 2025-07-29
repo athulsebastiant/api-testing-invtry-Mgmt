@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome9",
+    "definitions": {
+        "Welcome9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "contactPerson": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "gstNumber": {
+                    "type": "string"
+                },
+                "companyType": {
+                    "type": "string"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "preferredContactMethod": {
+                    "type": "string"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "__v": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "__v",
+                "_id",
+                "address",
+                "companyType",
+                "contactPerson",
+                "createdAt",
+                "email",
+                "gstNumber",
+                "name",
+                "notes",
+                "phone",
+                "preferredContactMethod",
+                "status",
+                "tags",
+                "updatedAt"
+            ],
+            "title": "Welcome9"
+        }
+    }
+}

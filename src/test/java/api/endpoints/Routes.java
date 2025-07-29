@@ -18,7 +18,7 @@ public class Routes {
 	public static String delete_product_by_id = baseUrl + "/products/{id}";
 	
 	//Clients
-	public static String get_clients_url = baseUrl + "/clients/";
+	public static String get_clients_url = baseUrl + "/clients/"; //yet to implement
 	public static String post_client_url = baseUrl+"/clients/";
 	public static String get_client_by_id_url = baseUrl+"/clients/{id}";
 	public static String put_client_url = baseUrl+"/clients/{id}";

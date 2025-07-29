@@ -13,8 +13,8 @@ public class Client {
 	String notes;
 	Status status = Status.active;
 	public enum Status {active,inactive}
-	PrefferedContactMethod prefferedContactMethod = PrefferedContactMethod.email;
-	public enum PrefferedContactMethod {email,phone};
+	PreferredContactMethod preferredContactMethod = PreferredContactMethod.email;
+	public enum PreferredContactMethod {email,phone};
 	String [] tags;
 	
 	public String getId() {
@@ -77,11 +77,11 @@ public class Client {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	public PrefferedContactMethod getPrefferedContactMethod() {
-		return prefferedContactMethod;
+	public PreferredContactMethod getPreferredContactMethod() {
+		return preferredContactMethod;
 	}
-	public void setPrefferedContactMethod(PrefferedContactMethod prefferedContactMethod) {
-		this.prefferedContactMethod = prefferedContactMethod;
+	public void setPreferredContactMethod(PreferredContactMethod preferredContactMethod) {
+		this.preferredContactMethod = preferredContactMethod;
 	}
 	public String[] getTags() {
 		return tags;
