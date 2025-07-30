@@ -16,7 +16,7 @@ import io.restassured.response.Response;
 
 public class SupplierTests {
 	Supplier supplierpayload;
-	String id;
+	public static String supplierId;
 	
 	@BeforeClass
 	public void setup() {
@@ -35,8 +35,8 @@ public class SupplierTests {
 		response.then().log().all();
 		JSONObject jsonResponse = new JSONObject(response.asString());
 		JSONObject supplierObject = jsonResponse.getJSONObject("supplier");
-		id = supplierObject.getString("_id");
-		this.supplierpayload.setId(id);
+		supplierId = supplierObject.getString("_id");
+		this.supplierpayload.setId(supplierId);
 		Assert.assertEquals(supplierObject.getString("name"), this.supplierpayload.getName());
 		Assert.assertEquals(supplierObject.getString("email"), this.supplierpayload.getEmail());
 		Assert.assertEquals(supplierObject.getString("phone"), this.supplierpayload.getPhone());

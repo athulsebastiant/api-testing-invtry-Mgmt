@@ -17,7 +17,7 @@ import api.payload.Product;
 import io.restassured.response.Response;
 
 public class ProductTests {
-	String id;
+	public static String productId;
 	Product productPayload;
 	File testImage1;
     File testImage2;
@@ -60,8 +60,8 @@ public class ProductTests {
 		response.then().log().all();
 		JSONObject jsonResponse = new JSONObject(response.asString());
 	    JSONObject products = jsonResponse.getJSONObject("product");
-		id = products.getString("_id");
-	    this.productPayload.setId(id);
+		productId = products.getString("_id");
+	    this.productPayload.setId(productId);
 	    
 	    Assert.assertEquals(products.getString("name"), this.productPayload.getName() );
 	    Assert.assertEquals(products.getString("sku"),this.productPayload.getSku());

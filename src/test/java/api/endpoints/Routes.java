@@ -31,4 +31,10 @@ public class Routes {
 	public static String get_supplier_by_id = baseUrl + "/suppliers/{id}";
 	public static String delete_supplier_by_id = baseUrl + "/suppliers/{id}";
 	
+	//ProductSuppliers
+	public static String get_all_productSuppliers_url = baseUrl + "/productSuppliers/"; //yet to implement
+	public static String post_productSupplier_url = baseUrl + "/productSuppliers/";
+	public static String put_productSuppliers_url = baseUrl + "/productSuppliers/{id}";
+	public static String delete_productSuppliers_url = baseUrl + "/productSuppliers/{id}";
+	
 }
