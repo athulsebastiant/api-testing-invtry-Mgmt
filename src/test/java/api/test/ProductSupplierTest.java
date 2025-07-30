@@ -2,6 +2,8 @@ package api.test;
 
 import static org.hamcrest.Matchers.equalTo;
 
+import java.util.ArrayList;
+
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -16,18 +18,22 @@ public class ProductSupplierTest {
 	ProductSupplier psPayload;
 	String psId;
 	SupplierTests supplierTest = new SupplierTests();
+	String supplierId;
 	ProductTests productTest = new ProductTests();
+	String productId;
+	
 	@BeforeClass
 	public void setUp() {
 		psPayload = new ProductSupplier();
 		
 		supplierTest.setup();
 		supplierTest.testCreateSupplier();
-		
+		supplierId = TestDataStore.supplierIds.get(0);
 		productTest.setUp();
 		productTest.testCreateProduct();
-		psPayload.setProductId(ProductTests.productId);
-		psPayload.setSupplierId(SupplierTests.supplierId);
+		productId = TestDataStore.productIds.get(0);
+		psPayload.setProductId(productId);
+		psPayload.setSupplierId(supplierId);
 		psPayload.setUnitPrice(95.0);
 		psPayload.setPreferred(false);
 		psPayload.setLeadTimeDays(2);
@@ -43,10 +49,21 @@ public class ProductSupplierTest {
 		JSONObject jsonResponse = new JSONObject(response.asString());
 		JSONObject newLink = jsonResponse.getJSONObject("newLink");
 		psId = newLink.getString("_id");
+		
+		TestDataStore.productSupplierIds.add(psId);
+		TestDataStore.supplierToProductSupplierIds.computeIfAbsent(supplierId,k->new ArrayList<>()).add(psId);
+		/*If supplierId is already in the map, it returns the existing List<String>
+
+If not, it creates a new ArrayList<String>, puts it into the map under supplierId, and then returns it.
+After we get the list (either existing or newly created), we add psId (a productSupplierId) to that list.
+*/
 		this.psPayload.setId(psId);
 		
 		Assert.assertEquals(newLink.getString("productId"), this.psPayload.getProductId());
+		
 		Assert.assertEquals(newLink.getString("supplierId"), this.psPayload.getSupplierId());
+		
+//		TestDataStore.supplierId = this.psPayload.getSupplierId();
 		Assert.assertEquals(Double.valueOf(newLink.get("unitPrice").toString()), this.psPayload.getUnitPrice());
 
 		Assert.assertEquals(newLink.get("leadTimeDays"), this.psPayload.getLeadTimeDays());

@@ -37,4 +37,28 @@ public class Routes {
 	public static String put_productSuppliers_url = baseUrl + "/productSuppliers/{id}";
 	public static String delete_productSuppliers_url = baseUrl + "/productSuppliers/{id}";
 	
+	//purchaseOrders
+	public static String get_purchaseOrder_by_id_url = baseUrl + "/purchase-orders/{id}"; //yet to implement
+	public static String post_purchaseOrder_url = baseUrl + "/purchase-orders/";
+	public static String put_purchaseOrder_url = baseUrl + "/purchase-orders/{id}";
+	public static String delete_purchaseOrder_url = baseUrl + "/purchase-orders/{id}";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

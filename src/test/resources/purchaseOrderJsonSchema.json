@@ -1,0 +1,170 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome7",
+    "definitions": {
+        "Welcome7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "supplierId": {
+                    "$ref": "#/definitions/SupplierID"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Item"
+                    }
+                },
+                "status": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "__v": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "__v",
+                "_id",
+                "createdAt",
+                "items",
+                "status",
+                "supplierId",
+                "updatedAt"
+            ],
+            "title": "Welcome7"
+        },
+        "Item": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "productSupplierId": {
+                    "$ref": "#/definitions/ProductSupplierID"
+                },
+                "quantityOrdered": {
+                    "type": "integer"
+                },
+                "unitPrice": {
+                    "type": "integer"
+                },
+                "_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "_id",
+                "productSupplierId",
+                "quantityOrdered",
+                "unitPrice"
+            ],
+            "title": "Item"
+        },
+        "ProductSupplierID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "productId": {
+                    "$ref": "#/definitions/ProductID"
+                },
+                "supplierId": {
+                    "type": "string"
+                },
+                "unitPrice": {
+                    "type": "integer"
+                },
+                "leadTimeDays": {
+                    "type": "integer"
+                },
+                "preferred": {
+                    "type": "boolean"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "__v": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "__v",
+                "_id",
+                "createdAt",
+                "leadTimeDays",
+                "preferred",
+                "productId",
+                "supplierId",
+                "unitPrice",
+                "updatedAt"
+            ],
+            "title": "ProductSupplierID"
+        },
+        "ProductID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "imagesUrl": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "uri",
+                        "qt-uri-protocols": [
+                            "https"
+                        ],
+                        "qt-uri-extensions": [
+                            ".avif",
+                            ".jpg",
+                            ".webp"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "_id",
+                "imagesUrl",
+                "name"
+            ],
+            "title": "ProductID"
+        },
+        "SupplierID": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "_id",
+                "name"
+            ],
+            "title": "SupplierID"
+        }
+    }
+}
