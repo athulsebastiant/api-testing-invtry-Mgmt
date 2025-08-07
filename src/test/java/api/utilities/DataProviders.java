@@ -22,24 +22,58 @@ public class DataProviders {
 		return apidata;
 	}
 	
-	@DataProvider(name = "EmailPasswordData")
-    public Object[][] getEmailPasswordData() throws IOException {
-        String path = System.getProperty("user.dir") + "/testData/UserTestData.xlsx";
-        ExcelUtility xl = new ExcelUtility(path);
+	@DataProvider(name = "ProductData")
+	public Object[][] getProductData() throws IOException {
+	    String path = System.getProperty("user.dir") + "//testData//UserTestData.xlsx";
+	    ExcelUtility xl = new ExcelUtility(path);
+	    
+	    int rowCount = xl.getRowCount("Sheet2");
+	    int colCount = xl.getCellCount("Sheet2", 1); // Assuming first row is header
 
-        int rowCount = xl.getRowCount("Sheet1");
-        int colCount = xl.getCellCount("Sheet1", 1);  // row 1 assumed to be first data row (not header)
+	    Object[][] productData = new Object[rowCount][colCount];
 
-        Object[][] data = new Object[rowCount][2]; // only email and password
+	    for (int i = 1; i <= rowCount; i++) {
+	        for (int j = 0; j < colCount; j++) {
+	            productData[i - 1][j] = xl.getCellData("Sheet2", i, j);
+	        }
+	    }
 
-        for (int i = 1; i <= rowCount; i++) {
-            String email = xl.getCellData("Sheet1", i, 1);    // column 1: email
-            String password = xl.getCellData("Sheet1", i, 2); // column 2: password
+	    return productData;
+	}
+	
+	@DataProvider(name = "UpdatedProductData")
+	public Object[][] getUpdatedProductData() throws IOException {
+	    String path = System.getProperty("user.dir") + "//testData//UserTestData.xlsx";
+	    ExcelUtility xl = new ExcelUtility(path);
+	    
+	    int rowCount = xl.getRowCount("Sheet3");
+	    int colCount = xl.getCellCount("Sheet3", 1); // Assuming first row is header
 
-            data[i - 1][0] = email;
-            data[i - 1][1] = password;
-        }
+	    Object[][] productData = new Object[rowCount][colCount];
 
-        return data;
-    }
+	    for (int i = 1; i <= rowCount; i++) {
+	        for (int j = 0; j < colCount; j++) {
+	            productData[i - 1][j] = xl.getCellData("Sheet3", i, j);
+	        }
+	    }
+
+	    return productData;
+	}
+	
+	@DataProvider(name = "GetProductNames")
+	public Object[][] getNamesOfProducts() throws IOException {
+	    String path = System.getProperty("user.dir") + "//testData//UserTestData.xlsx";
+	    ExcelUtility xl = new ExcelUtility(path);
+	    
+	    int rowCount = xl.getRowCount("Sheet3");
+
+	    Object[][] productData = new Object[rowCount][1]; // Only one column per row
+
+	    for (int i = 1; i <= rowCount; i++) {
+	        productData[i - 1][0] = xl.getCellData("Sheet3", i, 0); // Only column 0
+	    }
+
+	    return productData;
+	}
+	
 }

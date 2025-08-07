@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="api.utilities.RetryListener"></listener>
+	</listeners>
+  <test thread-count="4" name="Test">
+    <classes>
+      <class name="api.ddtests.DDProductsTests">
+      <methods>
+		<include name="testCreateProduct"/>
+		<include name="testGetProduct"></include>
+		<include name="testUpdateProduct"></include>
+		<include name="testDeleteProduct"></include>
+	  </methods>
+	  </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
