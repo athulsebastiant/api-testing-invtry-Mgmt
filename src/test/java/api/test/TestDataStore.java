@@ -12,12 +12,13 @@ public class TestDataStore {
 	public static List<String> productIds = new ArrayList<>();
 	public static List<String> supplierIds = new ArrayList<>();
 	public static List<String> productSupplierIds = new ArrayList<>();
-	
+	public static List<String> clientIds = new ArrayList<>();
 	public static Map<String,List<String>> supplierToProductSupplierIds = new HashMap<>();
 	
 	public static void clear() {
         productIds.clear();
         supplierIds.clear();
+        clientIds.clear();
         productSupplierIds.clear();
         supplierToProductSupplierIds.clear();
     }

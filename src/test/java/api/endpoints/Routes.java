@@ -43,10 +43,15 @@ public class Routes {
 	public static String put_purchaseOrder_url = baseUrl + "/purchase-orders/{id}";
 	public static String delete_purchaseOrder_url = baseUrl + "/purchase-orders/{id}";
 	
+	//client quotations
 	
-	
-	
-	
+	public static String post_quotation_url = baseUrl + "/client-quotations/";
+	public static String get_quotation_by_id_url = baseUrl + "/client-quotations/{id}";
+	public static String get_all_quotations_url = baseUrl + "/client-quotations/";
+	public static String approve_quotation_by_id_url = baseUrl + "/client-quotations/{id}/approve";
+	public static String fulfill_quotation_by_id_url = baseUrl + "/client-quotations/{id}/fulfill";
+	public static String reject_quotation_by_id_url = baseUrl + "/client-quotations/{id}/reject";
+public static String delete_quotation_url = baseUrl + "/client-quotations/{id}";	
 	
 	
 	

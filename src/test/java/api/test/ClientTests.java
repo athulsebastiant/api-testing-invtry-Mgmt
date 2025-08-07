@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import api.endpoints.ClientEndpoints;
 import api.payload.Client;
-import api.payload.Client.CompanyType;
+
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 public class ClientTests {
@@ -46,6 +46,7 @@ public class ClientTests {
 		JSONObject jsonResponse = new JSONObject(response.asString());
 		JSONObject clientObject = jsonResponse.getJSONObject("client");
 		id = clientObject.getString("_id");
+		TestDataStore.clientIds.add(id);
 		this.clientPayload.setId(id);
 		Assert.assertEquals(clientObject.getString("name"), this.clientPayload.getName());
 		Assert.assertEquals(clientObject.getString("contactPerson"), this.clientPayload.getContactPerson());
